@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class ClassA
+{
+    private:
+    int scoresubject1;
+    int scoresubject2;
+    int scoresubject3;
+    int scoresubject4;
+    int scoresubject5;
+    public:
+    ClassA(int a1, int a2, int a3, int a4, int a5)
+    : scoresubject1(a1), scoresubject2(a2), scoresubject3(a3), scoresubject4(a4), scoresubject5(a5) {}
+    int calculateTotalScore(int a1, int a2, int a3, int a4, int a5)
+    {
+        return a1 + a2 + a3 + a4 + a5;
+    }
+};
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin >> n;
+    int count = 0;
+    int arrTotalScore[n];
+    for (int i = 0; i < n; i++)
+    {   int a1, a2, a3, a4, a5;
+        cin >> a1 >> a2 >> a3 >> a4 >> a5;
+        ClassA student(a1, a2, a3, a4, a5);
+        arrTotalScore[i] = student.calculateTotalScore(a1, a2, a3, a4, a5);
+        if (arrTotalScore[i] > arrTotalScore[0]) {
+            count ++;
+        } 
+    }
+    cout << count;
+    return 0;
+}
