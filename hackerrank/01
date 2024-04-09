@@ -1,0 +1,24 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+struct Student
+{
+    int age;
+    string first_name;
+    string last_name;
+    int standard;
+};
+void printAnswer(Student a)
+{
+    cout <<  a.age << " " <<a.first_name << " " << a.last_name << " " << a.standard;
+}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    Student a;
+    cin >> a.age >> a.first_name >> a.last_name >> a.standard;
+    printAnswer(a);
+    return 0;
+}
